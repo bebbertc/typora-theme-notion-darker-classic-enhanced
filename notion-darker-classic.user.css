@@ -152,3 +152,376 @@ h6 {
 #copilot-chat-container {
   right: 12px !important;
 }
+
+blockquote {
+  color: white !important;
+}
+
+.ty-menu-shortcut {
+  margin-left: 15px !important;
+}
+
+.typ-ribbon > .group.top .typ-ribbon-item.active {
+    border-left: var(--typ-indicator-width) solid white !important;
+}
+
+.typ-ribbon-item {
+  cursor: pointer;
+}
+
+.typ-settings-modal {
+  border-radius: 10px;
+  border: 1px solid var(--my-border-color) !important;
+  box-shadow: none !important;
+}
+
+.typ-setting-item:not(:last-child:has(table)) {
+    border-bottom: solid 1px var(--my-border-color) !important;
+}
+
+.typ-nav__item {
+  cursor: pointer;
+}
+
+.typ-sidebar {
+    border-right: 1px solid var(--my-border-color) !important;
+}
+
+/* Контейнер можно сузить при необходимости */
+.typ-setting-controls input[type="checkbox"]{
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 13px;
+  height: 13px;
+  margin: 0;
+
+  background: #191919;
+  border: 1px solid #2d2d2d;
+  border-radius: 3px;
+
+  display: inline-grid;
+  place-content: center;
+
+  cursor: pointer;
+  transition: border-color .12s ease, background-color .12s ease;
+}
+
+/* Галочка */
+.typ-setting-controls input[type="checkbox"]::before{
+  content: "";
+  width: 7px;
+  height: 4px;
+
+  border-left: 2px solid #cfcfcf;
+  border-bottom: 2px solid #cfcfcf;
+
+  transform: rotate(-45deg) scale(0);
+  transition: transform .12s ease;
+}
+
+/* checked */
+.typ-setting-controls input[type="checkbox"]:checked{
+  background: #1f1f1f;
+  border-color: #3a3a3a;
+}
+
+.typ-setting-controls input[type="checkbox"]:checked::before{
+  transform: rotate(-45deg) scale(1);
+}
+
+/* hover — очень сдержанно */
+.typ-setting-controls input[type="checkbox"]:hover{
+  border-color: #444;
+}
+
+/* keyboard focus */
+.typ-setting-controls input[type="checkbox"]:focus-visible{
+  outline: 2px solid rgba(255,255,255,.15);
+  outline-offset: 2px;
+}
+
+/* Общий стиль инпутов */
+.typ-setting-controls input[type="text"],
+.typ-setting-controls input[type="number"],
+.typ-setting-controls input[type="password"],
+.typ-setting-controls input[type="search"],
+.typ-setting-controls textarea{
+  background: #191919;
+  color: #e6e6e6;
+
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 1.4;
+
+  outline: none;
+  transition: border-color .12s ease, background-color .12s ease;
+}
+
+/* placeholder */
+.typ-setting-controls input::placeholder,
+.typ-setting-controls textarea::placeholder{
+  color: #7a7a7a;
+}
+
+/* hover */
+.typ-setting-controls input:hover,
+.typ-setting-controls textarea:hover{
+  border-color: #3a3a3a;
+}
+
+/* focus — спокойно, без кислотных обводок */
+.typ-setting-controls input:focus-visible,
+.typ-setting-controls textarea:focus-visible{
+  border-color: #5a5a5a;
+  background: #1c1c1c;
+}
+
+/* disabled */
+.typ-setting-controls input:disabled,
+.typ-setting-controls textarea:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+
+.typ-setting-controls select{
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: #191919;
+  color: #e6e6e6;
+
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+
+  padding: 4px 22px 4px 6px;
+  font-size: 12px;
+  line-height: 1.4;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: border-color .12s ease, background-color .12s ease;
+
+  /* кастомная стрелка */
+  background-image:
+    linear-gradient(45deg, transparent 50%, #9a9a9a 50%),
+    linear-gradient(135deg, #9a9a9a 50%, transparent 50%);
+  background-position:
+    calc(100% - 12px) 50%,
+    calc(100% - 9px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+/* hover */
+.typ-setting-controls select:hover{
+  border-color: #3a3a3a;
+}
+
+/* focus */
+.typ-setting-controls select:focus-visible{
+  border-color: #5a5a5a;
+  background-color: #1c1c1c;
+}
+
+/* disabled */
+.typ-setting-controls select:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* Базовая кнопка */
+.typ-button{
+  background: #1a1a1a;
+  color: #dcdcdc;
+
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+
+  padding: 4px 6px;
+  min-height: 22px;
+
+  font-size: 12px;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  cursor: pointer;
+  transition:
+    background-color .12s ease,
+    border-color .12s ease,
+    color .12s ease;
+}
+
+/* Иконка внутри */
+.typ-button svg,
+.typ-button i{
+  width: 12px;
+  height: 12px;
+  opacity: .85;
+}
+
+/* hover */
+.typ-button:hover{
+  background: #1f1f1f;
+  border-color: #3a3a3a;
+}
+
+/* focus (keyboard) */
+.typ-button:focus-visible{
+  outline: 2px solid rgba(255,255,255,.15);
+  outline-offset: 2px;
+}
+
+/* disabled */
+.typ-button:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* PRIMARY — спокойный */
+.typ-button.primary{
+  color: #e6e6e6;
+}
+
+/* DANGER — не кричащий */
+.typ-button.danger{
+  color: #ff6b6b;
+  border-color: #3a2a2a;
+}
+
+.typ-button.danger {
+    background: rgb(127 45 55) !important;
+}
+
+.typ-button.danger:hover{
+  background: #221616 !important;
+  border-color: #553030 !important;
+}
+
+/* Иконка без текста */
+.typ-button.icon{
+  padding: 4px;
+  width: 22px;
+  height: 22px;
+}
+
+.typ-tag {
+    border: 1px solid var(--my-border-color) !important;
+}
+
+.typ-button.primary {
+    background: #2a2a2a !important;
+}
+
+
+/* Контейнер таблицы */
+.typ-editable-table{
+  background: #151515;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden; /* чтобы радиус реально работал */
+}
+
+/* Сама таблица */
+.typ-editable-table table{
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Ячейки */
+.typ-editable-table th,
+.typ-editable-table td{
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1.35;
+
+  color: #e6e6e6;
+  background: transparent;
+
+  border-right: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+
+  vertical-align: top;
+}
+
+/* Убираем правую/нижнюю рамку у краёв */
+.typ-editable-table tr > *:last-child{
+  border-right: none;
+}
+.typ-editable-table tbody tr:last-child > *{
+  border-bottom: none;
+}
+
+/* Шапка */
+.typ-editable-table th{
+  background: #1a1a1a;
+  color: #f0f0f0;
+  font-weight: 600;
+}
+
+/* Hover по строке (очень сдержанно) */
+.typ-editable-table tbody tr:hover td{
+  background: #1b1b1b;
+}
+
+/* Выделенная/активная ячейка (когда редактируешь) */
+.typ-editable-table td:focus,
+.typ-editable-table td:focus-within{
+  background: #1c1c1c;
+  outline: 2px solid rgba(255,255,255,.10);
+  outline-offset: -2px;
+}
+
+/* Текст, выделенный мышью внутри таблицы */
+.typ-editable-table ::selection{
+  background: rgba(255,255,255,.12);
+}
+
+textarea{
+  background: #191919;
+  color: #e6e6e6;
+
+  border: 1px solid #2d2d2d;
+  border-radius: 4px;
+
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1.45;
+
+  resize: vertical; /* можно both / none по вкусу */
+  outline: none;
+
+  transition: border-color .12s ease, background-color .12s ease;
+}
+
+/* placeholder */
+textarea::placeholder{
+  color: #7a7a7a;
+}
+
+/* hover */
+textarea:hover{
+  border-color: #3a3a3a;
+}
+
+/* focus */
+textarea:focus-visible{
+  border-color: #5a5a5a;
+  background: #1c1c1c;
+}
+
+/* disabled */
+textarea:disabled{
+  opacity: .45;
+  cursor: not-allowed;
+}
