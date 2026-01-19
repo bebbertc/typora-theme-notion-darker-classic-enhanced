@@ -241,8 +241,18 @@ blockquote {
   outline-offset: 2px;
 }
 
+#file-library-search-input:focus {
+    border-color: #979797 !important;
+}
+
+#file-library-search-input {
+    height: 30px !important;
+    font-size: 14px !important;
+}
+
 /* Общий стиль инпутов */
 .typ-setting-controls input[type="text"],
+#file-library-search-input,
 .typ-setting-controls input[type="number"],
 .typ-setting-controls input[type="password"],
 .typ-setting-controls input[type="search"],
@@ -524,4 +534,12 @@ textarea:focus-visible{
 textarea:disabled{
   opacity: .45;
   cursor: not-allowed;
+}
+
+.typ-tab .typ-close::before {
+    font-size: 16px !important;
+}
+
+hr {
+    background-color: #3d3d3d !important;
 }
