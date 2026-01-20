@@ -1,0 +1,548 @@
+:root {
+  /* Аналогично darker-расширению, только под light */
+  --my-border-color: #dedddb; /* мягкая граница под light */
+  --my-border-color-strong: #cfcfcd;
+
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+    Arial, sans-serif;
+
+  /* Подхватим основные цвета из light темы (на случай если ты потом правишь базу) */
+  --my-bg: var(--bg-color);            /* #ffffff */
+  --my-panel-bg: var(--bg-color-dark); /* #f7f6f3 */
+  --my-text: var(--text-color);        /* #37352f */
+}
+
+/* Scrollbar (Chromium / Electron) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(55, 53, 47, 0.18);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(55, 53, 47, 0.28);
+}
+
+/* Tabs */
+.typ-workspace-tabs.mod-active .typ-tab {
+  border-top: none !important;
+}
+
+/* Общие настройки табов */
+.typ-tab,
+.typ-tabs::after {
+  color: var(--my-text) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  border-bottom: 1px solid var(--my-border-color) !important;
+}
+
+.typ-tab {
+  background-color: var(--my-panel-bg) !important;
+  border: 1px solid var(--my-border-color) !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  padding-top: 0 !important;
+  cursor: pointer !important;
+  transition: background-color 0.2s ease;
+}
+
+.typ-tab.active {
+  border: 1px solid var(--my-border-color) !important;
+  border-bottom: none !important;
+  padding-top: 0 !important;
+  background-color: var(--my-bg) !important;
+}
+
+.typ-tab:hover {
+  background-color: #ffffff !important;
+}
+
+/* Close icon visibility */
+.typ-workspace-tabs .typ-tab:only-child .typ-close {
+  display: flex;
+}
+
+.typ-icon.typ-close::before {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.typ-tab:hover .typ-icon.typ-close::before {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s linear 0s;
+}
+
+/* Icons alignment */
+.typ-file-icon,
+.typ-icon {
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+/* File tree */
+.file-node-content {
+  cursor: pointer !important;
+}
+
+/* Emoji вместо file-text icon (как у тебя в darker) */
+.fa-file-text-o:before {
+  content: "📄" !important;
+}
+
+/* Context menu */
+.context-menu {
+  box-shadow: none !important;
+  border: 1px solid var(--my-border-color) !important;
+  padding: 10px 5px !important;
+  border-radius: 7px !important;
+  background: var(--my-panel-bg) !important;
+}
+
+.context-menu.dropdown-menu > li > a {
+  border-radius: 5px !important;
+  cursor: pointer !important;
+}
+
+/* Links */
+a,
+.md-def-url {
+  border: none !important;
+}
+
+.md-link {
+  font-weight: 600 !important;
+  color: #6b6a65 !important; /* нейтрально-серый для light */
+  text-decoration: underline !important;
+}
+
+/* Editor */
+#write {
+  padding-right: 20% !important;
+  color: var(--my-text) !important;
+  font-weight: 400 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--my-text) !important;
+}
+
+/* Code blocks */
+.md-fences {
+  background: var(--my-panel-bg) !important;
+  border: 1px solid var(--my-border-color) !important;
+  border-radius: 7px !important;
+  padding: 35px 10px !important;
+}
+
+.CodeMirror-gutters {
+  border: none !important;
+}
+
+.CodeMirror-foldgutter-open:after,
+.CodeMirror-foldgutter-folded:after {
+  color: #8a8984 !important;
+}
+
+#copilot-chat-container {
+  right: 12px !important;
+}
+
+blockquote {
+  color: var(--my-text) !important;
+}
+
+/* Меню шорткатов (как у тебя) */
+.ty-menu-shortcut {
+  margin-left: 15px !important;
+}
+
+/* Ribbon active indicator */
+.typ-ribbon > .group.top .typ-ribbon-item.active {
+  border-left: var(--typ-indicator-width) solid var(--my-text) !important;
+}
+
+.typ-ribbon-item:hover .fa {
+  transition: 0.2s;
+  color: var(--my-text) !important;
+}
+
+.typ-ribbon-item {
+  cursor: pointer;
+}
+
+/* Settings modal */
+.typ-settings-modal {
+  border-radius: 10px;
+  border: 1px solid var(--my-border-color) !important;
+  box-shadow: none !important;
+  background: var(--my-bg) !important;
+}
+
+.typ-setting-item:not(:last-child:has(table)) {
+  border-bottom: solid 1px var(--my-border-color) !important;
+}
+
+.typ-nav__item {
+  cursor: pointer;
+}
+
+.typ-sidebar {
+  border-right: 1px solid var(--my-border-color) !important;
+}
+
+/* Checkbox (light) */
+.typ-setting-controls input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 13px;
+  height: 13px;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid var(--my-border-color);
+  border-radius: 3px;
+
+  display: inline-grid;
+  place-content: center;
+
+  cursor: pointer;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.typ-setting-controls input[type="checkbox"]::before {
+  content: "";
+  width: 7px;
+  height: 4px;
+
+  border-left: 2px solid #37352f;
+  border-bottom: 2px solid #37352f;
+
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+.typ-setting-controls input[type="checkbox"]:checked {
+  background: #f3f2ef;
+  border-color: var(--my-border-color-strong);
+}
+
+.typ-setting-controls input[type="checkbox"]:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.typ-setting-controls input[type="checkbox"]:hover {
+  border-color: var(--my-border-color-strong);
+}
+
+.typ-setting-controls input[type="checkbox"]:focus-visible {
+  outline: 2px solid rgba(55, 53, 47, 0.12);
+  outline-offset: 2px;
+}
+
+/* Search input */
+#file-library-search-input:focus {
+  border-color: #a9a9a6 !important;
+}
+
+#file-library-search-input {
+  height: 30px !important;
+  font-size: 14px !important;
+}
+
+.searchpanel-search-option-btn {
+  border: none !important;
+}
+
+/* Общий стиль инпутов (light) */
+.typ-setting-controls input[type="text"],
+#search-panel-input,
+#file-library-search-input,
+#search-panel-replace-input,
+.typ-setting-controls input[type="number"],
+.typ-setting-controls input[type="password"],
+.typ-setting-controls input[type="search"],
+.typ-setting-controls textarea {
+  background: #ffffff;
+  color: var(--my-text);
+
+  border: 1px solid var(--my-border-color);
+  border-radius: 4px;
+
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 1.4;
+
+  outline: none;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.typ-setting-controls input::placeholder,
+.typ-setting-controls textarea::placeholder {
+  color: #9a9994;
+}
+
+.typ-setting-controls input:hover,
+.typ-setting-controls textarea:hover {
+  border-color: var(--my-border-color-strong);
+}
+
+.typ-setting-controls input:focus-visible,
+.typ-setting-controls textarea:focus-visible {
+  border-color: #b7b6b3;
+  background: #ffffff;
+}
+
+.typ-setting-controls input:disabled,
+.typ-setting-controls textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Select (light) */
+.typ-setting-controls select {
+  -webkit-appearance: none;
+  appearance: none;
+
+  background-color: #ffffff;
+  color: var(--my-text);
+
+  border: 1px solid var(--my-border-color);
+  border-radius: 4px;
+
+  padding: 4px 22px 4px 6px;
+  font-size: 12px;
+  line-height: 1.4;
+
+  cursor: pointer;
+  outline: none;
+
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+
+  background-image: linear-gradient(45deg, transparent 50%, #777 50%),
+    linear-gradient(135deg, #777 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 9px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.typ-setting-controls select:hover {
+  border-color: var(--my-border-color-strong);
+}
+
+.typ-setting-controls select:focus-visible {
+  border-color: #b7b6b3;
+  background-color: #ffffff;
+}
+
+.typ-setting-controls select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Buttons (light) */
+.typ-button {
+  background: #ffffff;
+  color: var(--my-text);
+
+  border: 1px solid var(--my-border-color);
+  border-radius: 4px;
+
+  padding: 4px 6px;
+  min-height: 22px;
+
+  font-size: 12px;
+  line-height: 1;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.typ-button svg,
+.typ-button i {
+  width: 12px;
+  height: 12px;
+  opacity: 0.85;
+}
+
+.typ-button:hover {
+  background: #fbfaf8;
+  border-color: var(--my-border-color-strong);
+}
+
+.typ-button:focus-visible {
+  outline: 2px solid rgba(55, 53, 47, 0.12);
+  outline-offset: 2px;
+}
+
+.typ-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.typ-button.primary {
+  background: #f7f6f3 !important;
+  color: var(--my-text);
+}
+
+.typ-button.danger {
+  color: #b42318;
+  border-color: #f2c6c2;
+  background: #fdebec !important; /* в духе search-hit-bg из light */
+}
+
+.typ-button.danger:hover {
+  background: #fbdedd !important;
+  border-color: #ecb3ae !important;
+}
+
+/* Tags */
+.typ-tag {
+  border: 1px solid var(--my-border-color) !important;
+}
+
+/* Editable table (light) */
+.typ-editable-table {
+  background: #ffffff;
+  border: 1px solid var(--my-border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.typ-editable-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.typ-editable-table th,
+.typ-editable-table td {
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 1.35;
+
+  color: var(--my-text);
+  background: transparent;
+
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  vertical-align: top;
+}
+
+.typ-editable-table tr > *:last-child {
+  border-right: none;
+}
+.typ-editable-table tbody tr:last-child > * {
+  border-bottom: none;
+}
+
+.typ-editable-table th {
+  background: var(--my-panel-bg);
+  color: var(--my-text);
+  font-weight: 600;
+}
+
+.typ-editable-table tbody tr:hover td {
+  background: #fbfaf8;
+}
+
+.typ-editable-table td:focus,
+.typ-editable-table td:focus-within {
+  background: #ffffff;
+  outline: 2px solid rgba(55, 53, 47, 0.1);
+  outline-offset: -2px;
+}
+
+.typ-editable-table ::selection {
+  background: rgba(46, 170, 220, 0.18); /* мягко-голубой */
+}
+
+/* textarea */
+textarea {
+  background: #ffffff;
+  color: var(--my-text);
+
+  border: 1px solid var(--my-border-color);
+  border-radius: 4px;
+
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1.45;
+
+  resize: vertical;
+  outline: none;
+
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+textarea::placeholder {
+  color: #9a9994;
+}
+
+textarea:hover {
+  border-color: var(--my-border-color-strong);
+}
+
+textarea:focus-visible {
+  border-color: #b7b6b3;
+  background: #ffffff;
+}
+
+textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Close icon size (как у тебя) */
+.typ-tab .typ-close::before {
+  font-size: 16px !important;
+}
+
+/* hr чуть заметнее в light */
+hr {
+  background-color: #e3e2df !important;
+}
+
+/* Search panel align */
+.ty-sidebar-search-panel .searchpanel-search-option-btn {
+  top: 6px !important;
+}
+
+/* Markmap (в light обычно норм, но оставлю “на всякий”) */
+.markmap {
+  color: var(--my-text) !important;
+}
+
+/* Search selected highlight — в light пусть будет мягко-жёлтый */
+.cm-search-hit.CodeMirror-selectedtext,
+.md-search-hit.md-search-select,
+.md-search-select {
+  background: rgba(254, 236, 200, 0.9) !important; /* близко к --text-highlight-bg */
+}
