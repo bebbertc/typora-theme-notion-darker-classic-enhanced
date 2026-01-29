@@ -852,3 +852,279 @@ megamenu-back-btn {
 .megamenu-menu-panel table tr:nth-child(2n + 1) {
     background-color: var(--side-bar-bg-color);
 }
+
+
+/* =========================================================
+   Preferences window (class .ty-preferences)
+   ========================================================= */
+
+.ty-preferences {
+  color: var(--text-color) !important;
+}
+
+/* window shell */
+.ty-preferences .window {
+  background: var(--bg-color) !important;
+  border: 1px solid var(--text-accent-color) !important;
+  border-radius: calc(var(--border-radius) + 2px) !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+
+/* header */
+.ty-preferences .window-header {
+  background: var(--bg-color-dark) !important;
+  border-bottom: 1px solid var(--text-accent-color) !important;
+}
+
+.ty-preferences .window-header-title h2 {
+  color: var(--text-color) !important;
+  font-weight: 700 !important;
+}
+
+.ty-preferences .window-header .icon svg {
+  fill: var(--text-color) !important;
+  opacity: 0.9;
+}
+
+.ty-preferences .window-header-back,
+.ty-preferences .header-close {
+  border-radius: var(--border-radius) !important;
+  transition: background-color 0.12s ease;
+}
+
+.ty-preferences .window-header-back:hover,
+.ty-preferences .header-close:hover {
+  background: rgba(55, 53, 47, 0.06) !important;
+}
+
+/* layout */
+.ty-preferences .pane-group {
+  background: var(--bg-color) !important;
+}
+
+.ty-preferences .pane-sm.sidebar {
+  background: var(--side-bar-bg-color) !important;
+  border-right: 1px solid var(--text-accent-color) !important;
+}
+
+/* sidebar search */
+.ty-preferences .search-input {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--text-accent-color) !important;
+  border-radius: var(--border-radius) !important;
+  height: 30px !important;
+  padding: 4px 28px 4px 8px !important;
+  font-size: 13px !important;
+  outline: none !important;
+}
+
+.ty-preferences .search-input:focus,
+.ty-preferences .search-input:focus-visible {
+  border-color: var(--text-color) !important;
+}
+
+.ty-preferences .clear-btn-icon {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+.ty-preferences .clear-btn-icon:hover {
+  opacity: 0.9;
+}
+
+/* nav items */
+.ty-preferences .nav-group-item {
+  color: var(--text-color) !important;
+  border-radius: var(--border-radius) !important;
+  margin: 2px 6px !important;
+  padding: 6px 10px !important;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+.ty-preferences .nav-group-item:hover {
+  background: var(--item-hover-bg-color) !important;
+}
+
+.ty-preferences .nav-group-item.active {
+  background: var(--active-file-bg-color) !important;
+  font-weight: 700 !important;
+}
+
+/* panel header */
+.ty-preferences .panel-header {
+  color: var(--text-color) !important;
+  font-weight: 700 !important;
+}
+
+/* groups */
+.ty-preferences .input-group {
+  border-bottom: 1px solid var(--text-accent-color) !important;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.ty-preferences .input-group-header-title {
+  color: var(--text-color) !important;
+  font-weight: 700 !important;
+}
+
+.ty-preferences .input-group-header-hint,
+.ty-preferences .panel-content-hint,
+.ty-preferences .inline-hint,
+.ty-preferences .label-hint {
+  color: var(--secondary-text-color) !important;
+}
+
+/* links in hints */
+.ty-preferences a {
+  color: var(--secondary-text-color) !important;
+  text-decoration: underline !important;
+  border-bottom: none !important;
+}
+
+/* inputs */
+.ty-preferences input[type="text"],
+.ty-preferences input[type="number"],
+.ty-preferences input[type="password"],
+.ty-preferences input[type="search"],
+.ty-preferences textarea {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--text-accent-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 4px 6px !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  outline: none !important;
+  transition: border-color 0.12s ease;
+}
+
+.ty-preferences input::placeholder,
+.ty-preferences textarea::placeholder {
+  color: #9a9994 !important;
+}
+
+.ty-preferences input:hover,
+.ty-preferences textarea:hover {
+  border-color: var(--text-color) !important;
+}
+
+.ty-preferences input:focus-visible,
+.ty-preferences textarea:focus-visible {
+  border-color: var(--text-color) !important;
+}
+
+/* selects */
+.ty-preferences select {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--text-accent-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 4px 22px 4px 6px !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  cursor: pointer;
+  outline: none !important;
+
+  background-image: linear-gradient(45deg, transparent 50%, #777 50%),
+    linear-gradient(135deg, #777 50%, transparent 50%);
+  background-position: calc(100% - 12px) 50%, calc(100% - 9px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+.ty-preferences select:hover {
+  border-color: var(--text-color) !important;
+}
+
+.ty-preferences select:focus-visible {
+  border-color: var(--text-color) !important;
+}
+
+/* buttons in Preferences are .btn */
+.ty-preferences .btn {
+  background: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  border: 1px solid var(--text-accent-color) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 4px 8px !important;
+  min-height: 22px !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.ty-preferences .btn:hover {
+  background: var(--bg-color-dark) !important;
+  border-color: var(--text-color) !important;
+}
+
+.ty-preferences .btn.btn-primary {
+  background: var(--bg-color-dark) !important;
+  border-color: var(--text-color) !important;
+}
+
+
+/* =========================================================
+   Preferences — красивые чекбоксы (как в Settings modal)
+   ========================================================= */
+
+/* базовый чекбокс */
+.ty-preferences input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  width: 13px;
+  height: 13px;
+  margin: 0;
+
+  background: #ffffff;
+  border: 1px solid var(--text-accent-color);
+  border-radius: 3px;
+
+  display: inline-grid;
+  place-content: center;
+
+  cursor: pointer;
+  transition: border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.ty-preferences input[type="checkbox"]::before {
+  content: "";
+  width: 6px;     /* было 7 */
+  height: 3px;    /* было 4 */
+
+  border-left: 1.5px solid #37352f;   /* было 2px */
+  border-bottom: 1.5px solid #37352f;
+
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+.ty-preferences input[type="checkbox"]:checked {
+  background: #f3f2ef;
+  border-color: #cfcfcd;
+}
+
+.ty-preferences input[type="checkbox"]:checked::before {
+  transform: rotate(-45deg) scale(1);
+}
+
+.ty-preferences input[type="checkbox"]:hover {
+  border-color: #cfcfcd;
+}
+
+.ty-preferences input[type="checkbox"]:focus-visible {
+  outline: 2px solid rgba(55, 53, 47, 0.12);
+  outline-offset: 2px;
+}
+
+.export-detail, .export-item.active, .export-items-list-control {
+    background: none !important;
+}

@@ -165,6 +165,11 @@ blockquote {
     border-left: var(--typ-indicator-width) solid white !important;
 }
 
+.typ-ribbon-item:hover .fa {
+  transition: 0.2s;
+  color: white !important;
+}
+
 .typ-ribbon-item {
   cursor: pointer;
 }
@@ -250,9 +255,15 @@ blockquote {
     font-size: 14px !important;
 }
 
+.searchpanel-search-option-btn {
+  border: none !important;
+}
+
 /* Общий стиль инпутов */
 .typ-setting-controls input[type="text"],
+#search-panel-input,
 #file-library-search-input,
+#search-panel-replace-input,
 .typ-setting-controls input[type="number"],
 .typ-setting-controls input[type="password"],
 .typ-setting-controls input[type="search"],
@@ -537,13 +548,26 @@ textarea:disabled{
 }
 
 .typ-tab .typ-close::before {
-  font-size: 16px !important;
+    font-size: 16px !important;
 }
 
 hr {
-  background-color: #3d3d3d !important;
+    background-color: #3d3d3d !important;
 }
 
 .ty-sidebar-search-panel .searchpanel-search-option-btn {
   top: 6px !important;
+}
+
+.markmap {
+  color: white !important;
+}
+
+
+.cm-search-hit.CodeMirror-selectedtext, .md-search-hit.md-search-select, .md-search-select {
+  background: rgb(155 131 0) !important;
+}
+
+.ty-contain-cm {
+  border: 1px solid var(--my-border-color);
 }

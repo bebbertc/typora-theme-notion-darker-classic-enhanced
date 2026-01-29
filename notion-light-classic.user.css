@@ -546,3 +546,20 @@ hr {
 .md-search-select {
   background: rgba(254, 236, 200, 0.9) !important; /* близко к --text-highlight-bg */
 }
+
+#copilot-chat-container {
+  border-left: 1px solid var(--my-border-color) !important;
+  border-bottom: 1px solid var(--my-border-color) !important;
+}
+
+
+pre.md-fences[lang="text"] .CodeMirror-line span[role="presentation"],
+pre.md-fences[lang="plain"] .CodeMirror-line span[role="presentation"],
+pre.md-fences[lang="plaintext"] .CodeMirror-line span[role="presentation"],
+pre.md-fences[lang="plain text"] .CodeMirror-line span[role="presentation"] {
+  color: #111 !important;
+}
+
+.typ-button.primary {
+    color: black !important;
+}
